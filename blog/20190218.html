@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>2019-02-18 | Mason 日记</title>
+    <meta name="description" content="神奇的 VuePress 之旅">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.e60e70b1.css" as="style"><link rel="preload" href="/assets/js/app.195a1fff.js" as="script"><link rel="preload" href="/assets/js/4.ce43b9a8.js" as="script"><link rel="prefetch" href="/assets/js/10.fd04ec71.js"><link rel="prefetch" href="/assets/js/2.eed09c2c.js"><link rel="prefetch" href="/assets/js/3.ca10e85f.js"><link rel="prefetch" href="/assets/js/5.599a0210.js"><link rel="prefetch" href="/assets/js/6.3b3fb71b.js"><link rel="prefetch" href="/assets/js/7.aaaa70a6.js"><link rel="prefetch" href="/assets/js/8.50856af0.js"><link rel="prefetch" href="/assets/js/9.4a04ab70.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e60e70b1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="Mason 日记" class="logo"> <span class="site-name can-hide">Mason 日记</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">Blog</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">Blog</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/" class="sidebar-link">2019-02-13</a></li><li><a href="/blog/20190214.html" class="sidebar-link">2019-02-14</a></li><li><a href="/blog/20190215.html" class="sidebar-link">2019-02-15</a></li><li><a href="/blog/20190218.html" class="active sidebar-link">2019-02-18</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/20190218.html#_1-基础样式-css" class="sidebar-link">1. 基础样式 css</a></li><li class="sidebar-sub-header"><a href="/blog/20190218.html#_2-报错-error-can-t-resolve-stylus-loader-in-d-sell-ele-src-components-header" class="sidebar-link">2. 报错 Error: Can't resolve 'stylus-loader' in 'D:\sell-ele\src\components\header'</a></li><li class="sidebar-sub-header"><a href="/blog/20190218.html#_3-vue-使用-axios" class="sidebar-link">3. Vue 使用 axios</a></li></ul></li><li><a href="/blog/20190219.html" class="sidebar-link">2019-02-19</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="_2019-02-18"><a href="#_2019-02-18" aria-hidden="true" class="header-anchor">#</a> 2019-02-18</h1> <h2 id="_1-基础样式-css"><a href="#_1-基础样式-css" aria-hidden="true" class="header-anchor">#</a> 1. 基础样式 <code>css</code></h2> <blockquote><p>https://meyerweb.com/eric/tools/css/reset/</p></blockquote> <h2 id="_2-报错-error-can-t-resolve-stylus-loader-in-d-sell-ele-src-components-header"><a href="#_2-报错-error-can-t-resolve-stylus-loader-in-d-sell-ele-src-components-header" aria-hidden="true" class="header-anchor">#</a> 2. 报错 <code>Error: Can't resolve 'stylus-loader' in 'D:\sell-ele\src\components\header'</code></h2> <blockquote><p>解决办法：cnpm i stylus stylus-loader --save</p></blockquote> <h2 id="_3-vue-使用-axios"><a href="#_3-vue-使用-axios" aria-hidden="true" class="header-anchor">#</a> 3. Vue 使用 axios</h2> <ul><li><ol><li>安装 axios</li></ol></li></ul> <div class="language- extra-class"><pre class="language-text"><code>$ cnpm install axios --save-dev
+</code></pre></div><ul><li><ol start="2"><li>在 main.js 中配置, vue 不支持 Vue.use() 的语法，所以不能直接 .use()</li></ol></li></ul> <div class="language- extra-class"><pre class="language-text"><code>import axios from 'axios'
+Vue.prototype.$ajax = axios
+</code></pre></div><ul><li><ol start="3"><li>在 main.js 中添加了这两行代码之后，就能直接在组件的 methods 中使用 $ajax 命令</li></ol></li></ul> <div class="language-js extra-class"><pre class="language-js"><code>methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$ajax<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/api/seller'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/background.7180bbe7.png" alt></p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/20190215.html" class="prev">
+          2019-02-15
+        </a></span> <span class="next"><a href="/blog/20190219.html">
+          2019-02-19
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.195a1fff.js" defer></script><script src="/assets/js/4.ce43b9a8.js" defer></script>
+  </body>
+</html>
